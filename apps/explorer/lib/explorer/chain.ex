@@ -6322,6 +6322,7 @@ defmodule Explorer.Chain do
           )
       }
     )
+  end
 
   def zkevm_batch(number, options \\ [])
 
