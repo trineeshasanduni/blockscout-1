@@ -20,9 +20,9 @@ defmodule Explorer.Chain.Import.Stage.BlockReferencing do
       Runner.Address.TokenBalances,
       Runner.TransactionActions,
       Runner.Withdrawals,
-      Runner.ZkevmLifecycleTxns,
-      Runner.ZkevmTxnBatches,
-      Runner.ZkevmBatchTxns
+      Runner.ZkevmLifecycleTransactions,
+      Runner.ZkevmTransactionBatches,
+      Runner.ZkevmBatchTransactions
     ]
 
   @impl Stage
