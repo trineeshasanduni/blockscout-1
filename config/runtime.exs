@@ -537,7 +537,8 @@ config :indexer, Indexer.Fetcher.Withdrawal.Supervisor,
 config :indexer, Indexer.Fetcher.Withdrawal, first_block: System.get_env("WITHDRAWALS_FIRST_BLOCK")
 
 config :indexer, Indexer.Fetcher.ZkevmTxnBatch,
-  chunk_size: ConfigHelper.parse_integer_env_var("INDEXER_ZKEVM_BATCHES_CHUNK_SIZE", 20)
+  chunk_size: ConfigHelper.parse_integer_env_var("INDEXER_ZKEVM_BATCHES_CHUNK_SIZE", 20),
+  recheck_interval: ConfigHelper.parse_integer_env_var("INDEXER_ZKEVM_BATCHES_RECHECK_INTERVAL", 60)
 
 config :indexer, Indexer.Fetcher.ZkevmTxnBatch.Supervisor,
   enabled: ConfigHelper.parse_bool_env_var("INDEXER_ZKEVM_BATCHES_ENABLED")
