@@ -66,8 +66,6 @@ defmodule Explorer.Chain do
     Withdrawal
   }
 
-  alias Explorer.Chain.Zkevm.{BatchTransaction, TransactionBatch}
-
   alias Explorer.Chain.Block.{EmissionReward, Reward}
 
   alias Explorer.Chain.Cache.{
@@ -4116,7 +4114,7 @@ defmodule Explorer.Chain do
     end
   end
 
-  defp join_associations(query, necessity_by_association) when is_map(necessity_by_association) do
+  def join_associations(query, necessity_by_association) when is_map(necessity_by_association) do
     Enum.reduce(necessity_by_association, query, fn {association, join}, acc_query ->
       join_association(acc_query, association, join)
     end)
@@ -6324,32 +6322,6 @@ defmodule Explorer.Chain do
     )
   end
 
-  def zkevm_batch(number, options \\ [])
-
-  def zkevm_batch(:latest, options) when is_list(options) do
-    TransactionBatch
-    |> order_by(desc: :number)
-    |> limit(1)
-    |> select_repo(options).one()
-    |> case do
-      nil -> {:error, :not_found}
-      batch -> {:ok, batch}
-    end
-  end
-
-  def zkevm_batch(number, options) when is_list(options) do
-    necessity_by_association = Keyword.get(options, :necessity_by_association, %{})
-
-    TransactionBatch
-    |> where(number: ^number)
-    |> join_associations(necessity_by_association)
-    |> select_repo(options).one()
-    |> case do
-      nil -> {:error, :not_found}
-      batch -> {:ok, batch}
-    end
-  end
-
   @spec verified_contracts_top(non_neg_integer()) :: [Hash.Address.t()]
   def verified_contracts_top(limit) do
     query =
@@ -6364,41 +6336,7 @@ defmodule Explorer.Chain do
     Repo.all(query)
   end
 
-  def zkevm_batches(options \\ []) do
-    necessity_by_association = Keyword.get(options, :necessity_by_association, %{})
-
-    base_query =
-      from(tb in TransactionBatch,
-        order_by: [desc: tb.number]
-      )
-
-    query =
-      if Keyword.get(options, :confirmed?, false) do
-        base_query
-        |> join_associations(necessity_by_association)
-        |> where([tb], not is_nil(tb.sequence_id) and tb.sequence_id > 0)
-        |> limit(10)
-      else
-        paging_options = Keyword.get(options, :paging_options, @default_paging_options)
-
-        base_query
-        |> join_associations(necessity_by_association)
-        |> page_zkevm_batches(paging_options)
-        |> limit(^paging_options.page_size)
-      end
-
-    select_repo(options).all(query)
-  end
-
-  def zkevm_batch_transactions(batch_number, options \\ []) do
-    query = from(bts in BatchTransaction, where: bts.batch_number == ^batch_number)
-
-    select_repo(options).all(query)
-  end
-
-  defp page_zkevm_batches(query, %PagingOptions{key: nil}), do: query
-
-  defp page_zkevm_batches(query, %PagingOptions{key: {number}}) do
-    from(tb in query, where: tb.number < ^number)
+  def default_paging_options do
+    @default_paging_options
   end
 end
