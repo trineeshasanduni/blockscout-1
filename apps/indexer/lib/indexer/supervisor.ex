@@ -32,9 +32,10 @@ defmodule Indexer.Supervisor do
     TokenUpdater,
     TransactionAction,
     UncleBlock,
-    Withdrawal,
-    ZkevmTransactionBatch
+    Withdrawal
   }
+
+  alias Indexer.Fetcher.Zkevm.TransactionBatch
 
   alias Indexer.Temporary.{
     BlocksTransactionsMismatch,
@@ -123,7 +124,7 @@ defmodule Indexer.Supervisor do
         {TokenUpdater.Supervisor,
          [[json_rpc_named_arguments: json_rpc_named_arguments, memory_monitor: memory_monitor]]},
         {ReplacedTransaction.Supervisor, [[memory_monitor: memory_monitor]]},
-        configure(ZkevmTransactionBatch.Supervisor, [
+        configure(TransactionBatch.Supervisor, [
           [json_rpc_named_arguments: json_rpc_named_arguments, memory_monitor: memory_monitor]
         ]),
 
