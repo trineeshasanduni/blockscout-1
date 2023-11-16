@@ -11,7 +11,7 @@ import Config
 
 # General application configuration
 config :explorer,
-  chain_type: ConfigHelper.chain_type(),
+  chain_type: ConfigHelper.chain_type() |> dbg(),
   ecto_repos: ConfigHelper.repos(),
   token_functions_reader_max_retries: 3,
   # for not fully indexed blockchains
