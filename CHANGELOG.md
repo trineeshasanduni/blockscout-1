@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#8846](https://github.com/blockscout/blockscout/pull/8846) - Handle nil gas_price at address view
+
 ### Chore
 
 ## 5.3.2-beta
