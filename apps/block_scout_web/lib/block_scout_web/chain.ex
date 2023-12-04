@@ -614,8 +614,6 @@ defmodule BlockScoutWeb.Chain do
 
   @spec paging_params_with_fiat_value(CurrentTokenBalance.t()) :: %{binary() => any}
   def paging_params_with_fiat_value(%CurrentTokenBalance{id: id, value: value} = ctb) do
-
-  defp paging_params_with_fiat_value(%CurrentTokenBalance{id: id, value: value} = ctb) do
     %{"fiat_value" => ctb.fiat_value, "value" => value, "id" => id}
   end
 
