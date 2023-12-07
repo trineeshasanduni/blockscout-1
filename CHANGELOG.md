@@ -4,6 +4,8 @@
 
 ### Features
 
+- [#8960](https://github.com/blockscout/blockscout/pull/8960) - TRACE_BLOCK_RANGES env var
+
 ### Fixes
 
 ### Chore
