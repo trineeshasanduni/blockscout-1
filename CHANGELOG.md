@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#8965](https://github.com/blockscout/blockscout/pull/8965) - Set poll: false for internal transactions fetcher
+
 ### Chore
 
 - [#8956](https://github.com/blockscout/blockscout/pull/8956) - Refine docker-compose config structure
