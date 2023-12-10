@@ -4,6 +4,8 @@
 
 ### Features
 
+- [#8972](https://github.com/blockscout/blockscout/pull/8972) - BENS integration
+
 ### Fixes
 
 ### Chore
