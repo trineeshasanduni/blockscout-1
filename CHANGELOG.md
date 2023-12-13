@@ -8,6 +8,8 @@
 
 ### Chore
 
+- [#8994](https://github.com/blockscout/blockscout/pull/8994) - Refactor transactions event preloads
+
 <details>
   <summary>Dependencies version bumps</summary>
 </details>
