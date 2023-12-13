@@ -35,10 +35,10 @@ defmodule Explorer.Chain.Log do
           block_hash: Hash.Full.t(),
           block_number: non_neg_integer() | nil,
           data: Data.t(),
-          first_topic: String.t(),
-          second_topic: String.t(),
-          third_topic: String.t(),
-          fourth_topic: String.t(),
+          first_topic: Hash.Full.t(),
+          second_topic: Hash.Full.t(),
+          third_topic: Hash.Full.t(),
+          fourth_topic: Hash.Full.t(),
           transaction: %Ecto.Association.NotLoaded{} | Transaction.t(),
           transaction_hash: Hash.Full.t(),
           index: non_neg_integer(),
@@ -48,10 +48,10 @@ defmodule Explorer.Chain.Log do
   @primary_key false
   schema "logs" do
     field(:data, Data)
-    field(:first_topic, :string)
-    field(:second_topic, :string)
-    field(:third_topic, :string)
-    field(:fourth_topic, :string)
+    field(:first_topic, Hash.Full)
+    field(:second_topic, Hash.Full)
+    field(:third_topic, Hash.Full)
+    field(:fourth_topic, Hash.Full)
     field(:index, :integer, primary_key: true)
     field(:type, :string)
     field(:block_number, :integer)

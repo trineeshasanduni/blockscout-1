@@ -8,6 +8,8 @@
 
 ### Chore
 
+- [#9000](https://github.com/blockscout/blockscout/pull/9000) - Change log topic type in the DB to bytea
+
 <details>
   <summary>Dependencies version bumps</summary>
 </details>

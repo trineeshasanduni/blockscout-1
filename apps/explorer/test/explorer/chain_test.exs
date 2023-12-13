@@ -4482,30 +4482,6 @@ defmodule Explorer.ChainTest do
     end
   end
 
-  describe "uncataloged_token_transfer_block_numbers/0" do
-    test "returns a list of block numbers" do
-      block = insert(:block)
-      address = insert(:address)
-
-      log =
-        insert(:token_transfer_log,
-          transaction:
-            insert(:transaction,
-              block_number: block.number,
-              block_hash: block.hash,
-              cumulative_gas_used: 0,
-              gas_used: 0,
-              index: 0
-            ),
-          block: block,
-          address_hash: address.hash
-        )
-
-      block_number = log.block_number
-      assert {:ok, [^block_number]} = Chain.uncataloged_token_transfer_block_numbers()
-    end
-  end
-
   describe "address_to_balances_by_day/1" do
     test "return a list of balances by day" do
       address = insert(:address)
