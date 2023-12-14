@@ -3,12 +3,27 @@
     "links":[
         {
             "text":"Discord",
-            "url":"https://www.blockscout.com"
+            "url":"https://discord.com/invite/bethelplatform"
         },
 
         {
             "text":"Twitter",
-            "url":"https://www.blockscout.com"
+            "url":"https://twitter.com/BethelPlatform"
+        },
+        {
+            "text":"Facebook",
+            "url":"https://www.facebook.com/bethelplatform?_rdc=2&_rdr"
+
+        },
+        {
+            "text":"Telegram",
+            "url":"https://t.me/bethelplatform"
+        },
+        
+        {
+            "text":"Youtube",
+            "url":"https://www.youtube.com/channel/UCVYnUnw_tKTlhdrx5Epnz-w"
         }
+        
         ]
 }]
