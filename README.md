@@ -12,7 +12,7 @@ Blockscout provides a comprehensive, easy-to-use interface for users to view, co
 
 See our [project documentation](https://docs.blockscout.com/) for detailed information and setup instructions.
 
-For questions, comments and feature requests see the [discussions section](https://github.com/blockscout/blockscout/discussions) or via [Discord](https://discord.com/invite/blockscout).
+For questions, comments and feature requests see the [discussions section](https://github.com/blockscout/blockscout/discussions) or via [Discord](https://discord.com/invite/bethelplatform).
 
 ## About Blockscout
 
@@ -22,7 +22,7 @@ Blockscout is an open-source alternative to centralized, closed source block exp
 
 ## Supported Projects
 
-Blockscout currently supports several hundred chains and rollups throughout the greater blockchain ecosystem. Ethereum, Cosmos, Polkadot, Avalanche, Near and many others include Blockscout integrations. [A comprehensive list is available here](https://docs.blockscout.com/about/projects). If your project is not listed, please submit a PR or [contact the team in Discord](https://discord.com/invite/blockscout).
+Blockscout currently supports several hundred chains and rollups throughout the greater blockchain ecosystem. Ethereum, Cosmos, Polkadot, Avalanche, Near and many others include Blockscout integrations. [A comprehensive list is available here](https://docs.blockscout.com/about/projects). If your project is not listed, please submit a PR or [contact the team in Discord](https://discord.com/invite/bethelplatform).
 
 ## Getting Started
 
