@@ -1,0 +1,13 @@
+{
+    "title":"footer",
+    "links":[
+        {
+            "text":"Homepage",
+            "url":"https://www.blockscout.com"
+        },
+        {
+            "text":"",
+            "url":"#"
+        }
+        ]
+}
