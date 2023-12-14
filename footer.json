@@ -1,13 +1,9 @@
-{
-    "title":"footer",
+[{
+    "title":"company",
     "links":[
         {
             "text":"Homepage",
             "url":"https://www.blockscout.com"
-        },
-        {
-            "text":"",
-            "url":"#"
         }
         ]
-}
+}]
